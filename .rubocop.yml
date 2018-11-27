@@ -35,8 +35,14 @@ Style/FrozenStringLiteralComment:
 Style/NumericLiterals:
   Enabled: false
 
+# Don't enforce adding the filename to the file
 Naming/FileName:
   Enabled: false
 
+# This is silly
 Style/SymbolArray:
+  Enabled: false
+
+# This doesn't add value.
+Style/EmptyMethod:
   Enabled: false

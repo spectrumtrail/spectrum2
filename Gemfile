@@ -41,6 +41,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'devise'
 
 # Use SimpleForm to generate forms
+gem 'country_select'
 gem 'simple_form'
 
 group :development, :test do

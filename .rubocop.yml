@@ -11,7 +11,7 @@ AllCops:
     - 'db/**/*'
     - 'node_modules/**/*'
     - 'vendor/bundle/**/*'
-    - 'congig/**/*'
+    - 'config/**/*'
 
 Rails:
   Enabled: true
@@ -22,3 +22,15 @@ Style/StringLiterals:
     - Gemfile.lock
   EnforcedStyle: double_quotes
   Enabled: true
+
+# Too spammy
+Style/Documentation:
+  Enabled: false
+
+# Will probably be default in ruby 3
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+# Do not write 1234 as 1_234
+Style/NumericLiterals:
+  Enabled: false

@@ -39,6 +39,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 # Use Devise for user authentication
 gem 'devise'
+gem 'devise_invitable', '~> 1.7.0'
 
 # Use SimpleForm to generate forms
 gem 'country_select'

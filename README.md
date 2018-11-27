@@ -1,25 +1,29 @@
-# README
+# Let's run some trails!
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This application powers the Spectrum Trail Running digital experience.
 
-Things you may want to cover:
+## Dev Notes
 
-* Ruby version
+The following notes are intended for application developers.
 
-* System dependencies
+### Template Generators
 
-* Configuration
+We use Rapid Rails Themes. This 'moves the starting line' for our front-end development. Here are some of the pages you can generate:
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# spectrum2
+```ruby
+  rrt:analytics_dashboard_pages
+  rrt:analytics_detail_pages
+  rrt:blog_archive_pages
+  rrt:blog_post_pages
+  rrt:content_blocks
+  rrt:customize
+  rrt:dashboard_pages
+  rrt:devise
+  rrt:error_pages
+  rrt:faq_pages
+  rrt:install
+  rrt:landing_pages
+  rrt:legal_pages
+  rrt:pricing_pages
+  rrt:user_account_pages
+```

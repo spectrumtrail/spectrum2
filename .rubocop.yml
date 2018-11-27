@@ -34,3 +34,9 @@ Style/FrozenStringLiteralComment:
 # Do not write 1234 as 1_234
 Style/NumericLiterals:
   Enabled: false
+
+Naming/FileName:
+  Enabled: false
+
+Style/SymbolArray:
+  Enabled: false

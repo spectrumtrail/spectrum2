@@ -287,4 +287,14 @@ Devise.setup do |config|
   # ActiveSupport.on_load(:devise_failure_app) do
   #   include Turbolinks::Controller
   # end
+Rails.application.config.to_prepare do
+  Devise::Mailer.layout "email"
+  Devise::Mailer.send(:include, EmailTemplateHelper)
+
+  Devise::Mailer.send(:helper, EmailTemplateHelper)
+
+end
+
+  
+
 end

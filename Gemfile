@@ -40,6 +40,9 @@ gem 'bootsnap', '>= 1.1.0', require: false
 # Use Devise for user authentication
 gem 'devise'
 
+# Use SimpleForm to generate forms
+gem 'simple_form'
+
 group :development, :test do
   gem 'byebug', '~> 10.0', platforms: %i[mri mingw x64_mingw]
   gem 'factory_bot_rails', '~> 4.11'
@@ -76,3 +79,10 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# Important: this must go last. Generates styled templates.
+source "https://gems.rapidrailsthemes.com/gems" do
+  gem "rrt", "~> 1.2.4"
+end
+
+gem 'jquery-rails'

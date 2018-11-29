@@ -1,0 +1,18 @@
+%nav{class: "navbar navbar-landing navbar-light navbar-expand-lg my-0"}
+  %a.navbar-brand{href: root_path}
+    = image_tag image_path('spectrum-logo-no-text.png'), class: 'mr-2' do
+      Spectrum
+  %button.navbar-toggler{"aria-controls" => "standardNavbar", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#standardNavbar", "data-toggle" => "collapse", type: "button"}
+    %span.navbar-toggler-icon
+  #standardNavbar.collapse.navbar-collapse
+    %ul.nav.navbar-nav.ml-auto
+      %li.nav-item
+        %a.nav-link{href: "javascript:"} SERIES
+      %li.nav-item
+        %a.nav-link{href: "javascript:"} RACES
+      %li.nav-item
+        %a.nav-link{href: "javascript:"} MORE
+      %li.nav-item
+        %a.btn.btn-sm.btn-primary{href: new_user_session_path} SIGN IN
+      %li.nav-item
+        %a.btn.btn-sm.btn-success.text-white{href: new_user_registration_path} SIGN UP

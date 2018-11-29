@@ -1,0 +1,45 @@
+%footer.bg-dark
+  .container
+    .row.no-gutter.bg-dark.p-5
+      .col-12.col-md-2
+        .d-flex.flex-column.flex-wrap.align-items-start.justify-content-center
+          %img.mb-3.img-fluid{src: "#{image_path('spectrum-logo-full')}", width: "120"}
+      .col-12.col-md-10.ml-md-auto.text-white
+        .row
+          .col-12.col-md-3
+            %h6 NAVIGATION
+            %ul.list-unstyled
+              %li
+                %a.text-hover-light{href: root_path} Home
+              %li
+                %a.text-hover-light{href: "javascript:"} About
+              %li
+                %a.text-hover-light{href: "javascript:"} Races
+              %li
+                %a.text-hover-light{href: "javascript:"} Contact
+          .col-12.col-md-3
+            %h6 LEGAL
+            %ul.list-unstyled
+              %li
+                %a.text-hover-light{href: terms_of_service_path} Terms of Service
+              %li
+                %a.text-hover-light{href: privacy_path} Privacy Policy
+              %li
+                %a.text-hover-light{href: "javascript:"} Cookie Policy
+          .col-12.col-md-3
+            %h6 SUPPORT
+            %ul.list-unstyled
+              %li
+                %a.text-hover-light{href: "javascript:"} FAQ
+              %li
+                %a.text-hover-light{href: "javascript:"} Help Desk
+              %li
+                %a.text-hover-light{href: "javascript:"} Knowledge Base
+          .col-12.col-md-3
+            %h6 EMAIL LIST
+            %form{action: ""}
+              %input.form-control.text-white.text-focus-dark.small{placeholder: "Your Email", type: "text"}/
+              %button.btn.btn-success.btn-sm.btn-block.mt-2{type: "button"} Get Notified
+    .row.no-gutter.bg-dark.p-4
+      .col-12.text-center
+        %p.small.text-muted.m-0 © 2018 - SPECTRUM TRAIL RUNNING

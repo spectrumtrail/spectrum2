@@ -1,7 +1,14 @@
 = render :layout => "layouts/base" do
   %nav.navbar.navbar-expand-lg.bg-primary
-    %a.navbar-brand{href: "javascript:"}= app_name
-    %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", type: "button"}
+    %a.navbar-brand{href: root_path}= app_name
+    %button.navbar-toggler{
+      "aria-controls": "navbarSupportedContent",
+      "aria-expanded": "false",
+      "aria-label": "Toggle navigation",
+      "data-target": "#navbarSupportedContent",
+      "data-toggle": "collapse",
+      type: "button"
+    }
       %span.navbar-toggler-icon
     #navbarSupportedContent.collapse.navbar-collapse
       %ul.navbar-nav.mr-auto

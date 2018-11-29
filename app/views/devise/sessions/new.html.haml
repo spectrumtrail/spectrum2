@@ -6,7 +6,7 @@
         %h1= app_name
         %p.p-0.m-0.text-uppercase Login
     .row.mt-5
-      .col-12.col-md-6.mr-auto.ml-auto
+      .col-sm-12.col-md-6.mr-auto.ml-auto
         = render partial: "layouts/flashes"
         .card
           .card-body
@@ -33,12 +33,12 @@
                       = f.label :remember_me, class: "checkbox m-0 mr-auto"
                     = f.submit "Log in", class: "btn btn-primary"
     .row
-      .col-12.col-md-6.mr-md-auto.ml-md-auto
+      .col-sm-12.col-md-6.mr-md-auto.ml-md-auto
         %ul.list-unstyled.options.row
-          %li.col-12.col-md-6= link_to "Sign up", new_registration_path(resource_name), class: "btn btn-primary"
+          %li.col-sm-12.col-md-6= link_to "Sign up", new_registration_path(resource_name), class: "btn btn-primary"
           - if devise_mapping.recoverable?
-            %li.col-12.col-md-6= link_to "Forgot your password?", new_password_path(resource_name)
+            %li.col-sm-12.col-md-6= link_to "Forgot your password?", new_password_path(resource_name)
           - if devise_mapping.confirmable?
-            %li.col-12.col-md-6= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name)
+            %li.col-sm-12.col-md-6= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name)
           - if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email)
-            %li.col-12.col-md-6= link_to "Didn't receive unlock instructions?", new_unlock_path(resource_name)
+            %li.col-sm-12.col-md-6= link_to "Didn't receive unlock instructions?", new_unlock_path(resource_name)

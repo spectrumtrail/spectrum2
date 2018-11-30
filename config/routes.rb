@@ -5,7 +5,13 @@ Rails.application.routes.draw do
   match "/terms_of_service" => "static_pages#terms_of_service", via: [:get]
   get "static_pages/home"
 
-  devise_for :users
+  devise_for :users, controllers: {
+    sessions: 'users/sessions',
+    registrations: 'users/registrations',
+    invitations: 'users/invitations',
+    passwords: 'users/passwords',
+  }
+
   devise_scope :user do
     get "/admin" => "devise/sessions#new"
     get "/users/sign_out" => "devise/sessions#destroy"

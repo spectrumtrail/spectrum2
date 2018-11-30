@@ -46,3 +46,9 @@ Style/SymbolArray:
 # This doesn't add value.
 Style/EmptyMethod:
   Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Metrics/MethodLength:
+  Enabled: false

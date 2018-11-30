@@ -1,0 +1,44 @@
+- @title = "Showing series"
+
+.container
+  .row
+    .col-xs-12.col-sm-12.col-md-12.col-lg-12
+      .form-horizontal
+        .form-group
+          %label.col-sm-2.form-label Name
+          .uneditable-input.col-md-8.form-control
+            %span= @series.name
+
+        .form-group
+          %label.col-sm-2.form-label Short description
+          .uneditable-input.col-md-8.form-control
+            %span= @series.short_description
+
+        .form-group
+          %label.col-sm-2.form-label Full description
+          .uneditable-input.col-md-8.form-control
+            %span= @series.full_description
+
+        .form-group
+          %label.col-sm-2.form-label Allows mass registration
+          .uneditable-input.col-md-8.form-control
+            %span= @series.allows_mass_registration
+
+        .form-group
+          %label.col-sm-2.form-label Mass registration open at
+          .uneditable-input.col-md-8.form-control
+            %span= @series.mass_registration_open_at
+
+        .form-group
+          %label.col-sm-2.form-label Contact email
+          .uneditable-input.col-md-8.form-control
+            %span= @series.contact_email
+
+        .form-group
+          %label.col-sm-2.form-label Contact name
+          .uneditable-input.col-md-8.form-control
+            %span= @series.contact_name
+
+        .form-actions.col-md-offset-2
+          = link_to fa_icon_tag("pencil") + ' Edit', edit_series_path(@series), class: 'btn btn-primary'
+          = link_to 'Back', series_index_path, class: 'btn'

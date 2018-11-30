@@ -10,10 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_27_191006) do
+ActiveRecord::Schema.define(version: 2018_11_30_142636) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "series", force: :cascade do |t|
+    t.string "name"
+    t.string "short_description"
+    t.text "full_description"
+    t.boolean "allows_mass_registration"
+    t.datetime "mass_registration_open_at"
+    t.string "contact_email"
+    t.string "contact_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -31,6 +43,15 @@ ActiveRecord::Schema.define(version: 2018_11_27_191006) do
     t.string "invited_by_type"
     t.bigint "invited_by_id"
     t.integer "invitations_count", default: 0
+    t.string "first_name"
+    t.string "last_name"
+    t.datetime "birthdate"
+    t.string "hometown"
+    t.boolean "life_long_athlete"
+    t.boolean "is_rogue_member"
+    t.boolean "is_admin"
+    t.string "time_zone"
+    t.datetime "deleted_at"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["invitation_token"], name: "index_users_on_invitation_token", unique: true
     t.index ["invitations_count"], name: "index_users_on_invitations_count"

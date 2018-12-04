@@ -1,0 +1,39 @@
+- @title = "Showing emergency_contact"
+
+.container
+  .row
+    .col-xs-12.col-sm-12.col-md-12.col-lg-12
+      .form-horizontal
+        .form-group
+          %label.col-sm-2.form-label User
+          .uneditable-input.col-md-8.form-control
+            %span= @emergency_contact.user
+
+        .form-group
+          %label.col-sm-2.form-label First name
+          .uneditable-input.col-md-8.form-control
+            %span= @emergency_contact.first_name
+
+        .form-group
+          %label.col-sm-2.form-label Last name
+          .uneditable-input.col-md-8.form-control
+            %span= @emergency_contact.last_name
+
+        .form-group
+          %label.col-sm-2.form-label Relation
+          .uneditable-input.col-md-8.form-control
+            %span= @emergency_contact.relation
+
+        .form-group
+          %label.col-sm-2.form-label Cell phone
+          .uneditable-input.col-md-8.form-control
+            %span= @emergency_contact.cell_phone
+
+        .form-group
+          %label.col-sm-2.form-label Last notified
+          .uneditable-input.col-md-8.form-control
+            %span= @emergency_contact.last_notified
+
+        .form-actions.col-md-offset-2
+          = link_to fa_icon_tag("pencil") + ' Edit', edit_emergency_contact_path(@emergency_contact), class: 'btn btn-primary'
+          = link_to 'Back', emergency_contacts_path, class: 'btn'

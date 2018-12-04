@@ -17,6 +17,12 @@ Rails.application.routes.draw do
     get "/users/sign_out" => "devise/sessions#destroy"
   end
 
+  # The User-Facing application. Normal users (participants) here.
+  authenticate :user do
+    resources :emergency_contacts
+  end
+
+  # The Admin Facing Application. Admin users will be directed here.
   namespace :admin do
     resource :dashboard, controller: 'dashboard'
     resources :series

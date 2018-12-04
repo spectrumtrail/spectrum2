@@ -19,6 +19,8 @@ Rails.application.routes.draw do
 
   # The User-Facing application. Normal users (participants) here.
   authenticate :user do
+    match "user" => "users#show", via: [:get]
+    resources :users, only: [:show, :update]
     resources :emergency_contacts
   end
 

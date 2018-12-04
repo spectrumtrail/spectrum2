@@ -1,0 +1,61 @@
+.row
+  .col-sm-12.col-md-12
+    %h5.mb-4.text-center PROFILE
+    = simple_form_for(user, url: registration_path(user), html: { method: :put }) do |f|
+      = f.error_notification
+      .fieldset
+        .row
+          .col-sm-12.col-md-12.col-lg-6
+            .form-group
+              = f.input :first_name, autofocus: true
+          .col-sm-12.col-md-12.col-lg-6
+            .form-group
+              = f.input :last_name
+        .row
+          .col-sm-12.col-md-12.col-lg-6
+            .form-group
+              = f.input :cell_phone, as: :tel
+          .col-sm-12.col-md-12.col-lg-6
+            .form-group
+              = f.input :email, as: :email
+        .row
+          .col-sm-12.col-md-12.col-lg-6
+            .form-group
+              = f.input :birthdate, label: "Date of Birth"
+          .col-sm-12.col-md-12.col-lg-6
+            .form-group
+              = f.input :hometown, label: "What City do you call Home?"
+        .row
+          .col-sm-12.col-md-12.col-lg-6
+            .form-group
+              = f.input :preferred_shirt_size,
+                as: :select,
+                collection: [ "X-SMALL", "SMALL", "MEDIUM", "LARGE", "X-LARGE" ],
+                include_blank: false
+      %hr
+      .fieldset
+        .row
+          .col-sm-12.col-md-12.col-lg-6
+            .form-group
+              = f.input :life_long_athlete, label: "I am a lifelong athlete!"
+            .form-group
+              = f.input :is_rogue_member, label: "I am a member of Rogue Running"
+        .row
+          .col-sm-12.col-md-12.col-lg-12
+            .form-group
+              = f.input :medical_notes,
+                  as: :text, label: "Medical Information",
+                  hint: "Is there anything you would like us to know about you on race day?"
+      %hr
+      .fieldset
+        .row
+          .col-sm-12.col-md-12.col-lg-6
+            .form-group
+              = f.input :allows_email, label: "Yes, you can send me emails."
+            .form-group
+              = f.input :allows_texting, label: "Yes, you can send me text messages."
+      %hr
+      .row.mt-3
+        .col-sm-12.col-md-12.col-lg-4
+          .form-actions.col-centered
+            = f.button :submit, class: 'btn btn-md btn-outline-success'

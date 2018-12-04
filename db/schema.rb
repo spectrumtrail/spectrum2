@@ -10,10 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_30_142636) do
+ActiveRecord::Schema.define(version: 2018_12_04_210530) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "emergency_contacts", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "relation"
+    t.string "cell_phone"
+    t.datetime "last_notified"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_emergency_contacts_on_user_id"
+  end
 
   create_table "series", force: :cascade do |t|
     t.string "name"
@@ -51,7 +63,13 @@ ActiveRecord::Schema.define(version: 2018_11_30_142636) do
     t.boolean "is_rogue_member"
     t.boolean "is_admin"
     t.string "time_zone"
+    t.string "cell_phone"
     t.datetime "deleted_at"
+    t.string "preferred_division"
+    t.string "preferred_shirt_size"
+    t.string "medical_notes"
+    t.boolean "allows_email", default: true
+    t.boolean "allows_texting", default: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["invitation_token"], name: "index_users_on_invitation_token", unique: true
     t.index ["invitations_count"], name: "index_users_on_invitations_count"
@@ -60,4 +78,5 @@ ActiveRecord::Schema.define(version: 2018_11_30_142636) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "emergency_contacts", "users"
 end

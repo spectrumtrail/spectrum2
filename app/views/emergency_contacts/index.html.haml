@@ -26,15 +26,13 @@
             %tbody
             - @emergency_contacts.each do |emergency_contact|
               %tr
-              %td= emergency_contact.user
-            %td= emergency_contact.first_name
-            %td= emergency_contact.last_name
-            %td= emergency_contact.relation
-            %td= emergency_contact.cell_phone
-            %td= emergency_contact.last_notified
-              %td.actions
-                = link_to fa_icon_tag("eye-open"), emergency_contact, rel: 'tooltip', title: 'Show'
-                = link_to fa_icon_tag("pencil"), edit_emergency_contact_path(emergency_contact), rel: 'tooltip', title: 'Edit'
-                = link_to fa_icon_tag("trash"), emergency_contact, rel: 'tooltip', title: 'Delete', data: { confirm: 'Are you sure?' }, method: :delete
-
-            
+                %td= emergency_contact.user
+                %td= emergency_contact.first_name
+                %td= emergency_contact.last_name
+                %td= emergency_contact.relation
+                %td= emergency_contact.cell_phone
+                %td= emergency_contact.last_notified
+                %td.actions
+                  = link_to fa_icon_tag("eye-open"), emergency_contact, rel: 'tooltip', title: 'Show'
+                  = link_to fa_icon_tag("pencil"), edit_emergency_contact_path(emergency_contact), rel: 'tooltip', title: 'Edit'
+                  = link_to fa_icon_tag("trash"), emergency_contact, rel: 'tooltip', title: 'Delete', data: { confirm: 'Are you sure?' }, method: :delete

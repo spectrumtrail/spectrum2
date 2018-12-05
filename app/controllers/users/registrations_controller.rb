@@ -1,5 +1,6 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   before_action :configure_permitted_parameters
+  layout :resolve_layout
 
   def destroy
     resource.soft_delete!
@@ -10,6 +11,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def configure_permitted_parameters
     the_keys = [
+      :allows_email,
+      :allows_texting,
       :birthdate,
       :cell_phone,
       :first_name,
@@ -24,11 +27,19 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def after_sign_up_path_for(resource)
+    # will be user_signups_path
   end
 
   def after_update_path_for(resource)
+    edit_user_registration_path
   end
 
   def resolve_layout
+    case action_name
+    when "new", "create"
+      "devise"
+    else
+      "application"
+    end
   end
 end

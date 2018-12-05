@@ -15,4 +15,8 @@ class User < ApplicationRecord
   def soft_delete!
     update(:deleted_at, Time.current)
   end
+
+  def level
+    ["Newcomer", "Learner", "Veteran", "Elite"].sample
+  end
 end

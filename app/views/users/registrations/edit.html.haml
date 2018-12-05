@@ -1,0 +1,58 @@
+- @title = "My Profile"
+= content_for :js_libs, "modernizr jasny"
+.profile-header.jumbotron.d-flex.align-items-center.justify-content-center.flex-column.pb-0
+  %h2.m-0.mb-2= current_user.name
+  .badge.badge-dark= current_user.level
+  %ul#myTab.nav.nav-tabs.mt-5{role: "tablist"}
+    %li.nav-item
+      %a#profile-tab.nav-link.active{"aria-controls" => "home", "aria-expanded" => "true", "data-toggle" => "tab", href: "#home", role: "tab"} Profile
+    %li.nav-item.disabled
+      %a#plan-tab.nav-link{"aria-controls" => "profile", "aria-expanded" => "false", "data-toggle" => "tab", href: "#profile", role: "tab"} Registrations
+    %li.nav-item
+      %a#billing-tab.nav-link{"aria-controls" => "billing", "aria-expanded" => "false", "data-toggle" => "tab", href: "#billing", role: "tab"} Results
+    %li.nav-item
+      %a#notifications-tab.nav-link{"aria-controls" => "notifications", "aria-expanded" => "false", "data-toggle" => "tab", href: "#notifications", role: "tab"} Notifications
+    %li.nav-item
+      %a#support-tab.nav-link{"aria-controls" => "support", "aria-expanded" => "false", "data-toggle" => "tab", href: "#support", role: "tab"} Support
+#main.devise-1
+  .row.m-5
+    .col-sm-12.col-md-8.mr-auto.ml-auto
+      .card
+        .card-body
+          .container
+            = simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+              = f.error_notification
+              .form-inputs
+                .row
+                  .col-sm-12.col-md-6
+                    .form-group
+                      = f.input :first_name, required: true, autofocus: true
+                  .col-sm-12.col-md-6
+                    .form-group
+                      = f.input :last_name, required: true
+                .row
+                  .col-sm-12.col-md-6
+                    .form-group
+                      = f.input :cell_phone, as: :tel, required: true
+                      = f.input :allows_texting
+                  .col-sm-12.col-md-6
+                    .form-group
+                      = f.input :email, required: true, autofocus: true
+                      = f.input :allows_email
+                - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+                  .row
+                    .col-sm-12
+                      %p
+                        Currently waiting confirmation for: #{resource.unconfirmed_email}
+                .row
+                  .col-sm-12.col-md-4
+                    .form-group
+                      = f.input :password, autocomplete: "off", hint: "leave it blank to remain unchanged", required: false
+                  .col-sm-12.col-md-4
+                    .form-group
+                      = f.input :password_confirmation, autocomplete: "off", hint: "leave it blank to remain unchanged", required: false
+                  .col-sm-12.col-md-4
+                    .form-group
+                      = f.input :current_password, hint: "we need your current password to confirm your changes", required: true
+              .form-actions
+                = f.button :submit, "Update", class: "btn btn-md btn-outline-success"

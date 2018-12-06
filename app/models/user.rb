@@ -4,6 +4,10 @@ class User < ApplicationRecord
   devise :invitable, :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  has_one_attached :avatar
+
+  DIVISIONS = ["FEMALE", "MALE", "OPEN"].freeze
+
   def name
     if first_name.present?
       "#{first_name} #{last_name}".titleize
@@ -17,6 +21,6 @@ class User < ApplicationRecord
   end
 
   def level
-    ["Newcomer", "Learner", "Veteran", "Elite"].sample
+    ["Newcomer", "Learner", "Master", "Veteran", "Elite"].sample
   end
 end

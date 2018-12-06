@@ -45,11 +45,13 @@ gem 'devise_invitable', '~> 1.7.0'
 gem 'country_select'
 gem 'simple_form'
 
+# Use LocalTime to show times naturally
+gem 'local_time'
+
 group :development, :test do
   gem 'byebug', '~> 10.0', platforms: %i[mri mingw x64_mingw]
   gem 'factory_bot_rails', '~> 4.11'
   gem 'faker', '~> 1.9'
-  gem 'haml-lint'
   gem 'pry', '~> 0.12.2'
   gem 'pry-byebug', '~> 3.6'
   gem 'pry-rails', '~> 0.3.7'
@@ -59,6 +61,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'haml-lint', require: false
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring', '~> 2.0'
   gem 'spring-commands-rspec', '~> 1.0'

@@ -1,0 +1,16 @@
+.profile-header.jumbotron.d-flex.align-items-center.justify-content-center.flex-column.pb-0
+  = render partial: 'users/avatar_upload'
+  %h2.m-0.mb-2= current_user.name
+  .badge.badge-dark= current_user.level
+  %small.text-muted.pt-2
+    Joined
+    = local_time_ago(current_user.created_at).html_safe
+  %ul.nav.nav-pills.mt-3.d-flex.align-items-center.justify-content-center.flex-column.pb-0
+    %li.nav-item
+      %a.nav-link.active{href: edit_user_registration_path} Profile
+    %li.nav-item
+      %a.nav-link{href: "#achievements"} Registrations
+    %li.nav-item
+      %a.nav-link{href: "#achievements"} Billing
+    %li.nav-item
+      %a.nav-link.disabled{href: "#achievements"} Achievements

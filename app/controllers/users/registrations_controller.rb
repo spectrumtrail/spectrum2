@@ -13,6 +13,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     the_keys = [
       :allows_email,
       :allows_texting,
+      :avatar,
       :birthdate,
       :cell_phone,
       :first_name,
@@ -20,6 +21,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
       :is_rogue_member,
       :last_name,
       :life_long_athlete,
+      :medical_notes,
+      :preferred_division,
+      :preferred_shirt_size,
       :time_zone
     ]
     devise_parameter_sanitizer.permit(:sign_up, keys: the_keys)

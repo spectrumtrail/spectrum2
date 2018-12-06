@@ -1,0 +1,10 @@
+.card
+  .card-body
+    = user_avatar(current_user, height: "120", width: "120", class: "avatar img-rounded")
+    %h4.m0.p0.d-block= current_user.name
+    .badge.badge-dark.small= current_user.level
+  .card-footer.d-flex.justify-content-between
+    %div
+      %a.btn.btn-neutral{href: edit_user_registration_path} Edit Profile
+    %div
+      %a.btn.btn-neutral{href: destroy_user_session_path} Log Out

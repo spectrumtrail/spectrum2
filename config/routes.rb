@@ -20,6 +20,10 @@ Rails.application.routes.draw do
   # The User-Facing application. Normal users (participants) here.
   authenticate :user do
     resources :emergency_contacts
+    resources :results
+    resources :billing_methods
+    resources :payments
+    resources :achievements
   end
 
   # The Admin Facing Application. Admin users will be directed here.

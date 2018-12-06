@@ -1,0 +1,2 @@
+class FooserController < ApplicationController
+end

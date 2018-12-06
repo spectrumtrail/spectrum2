@@ -1,5 +1,5 @@
 class EmergencyContactsController < ApplicationController
-  layout "scaffold"
+  layout "application"
 
   before_action :set_emergency_contact, only: [:show, :edit, :update, :destroy]
 

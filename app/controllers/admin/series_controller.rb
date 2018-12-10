@@ -1,5 +1,5 @@
 class Admin::SeriesController < Admin::BaseController
-  layout "scaffold"
+  layout "admin"
 
   before_action :set_series, only: [:show, :edit, :update, :destroy]
 
@@ -21,7 +21,10 @@ class Admin::SeriesController < Admin::BaseController
     @series = Series.new(series_params)
 
     if @series.save
-      redirect_to @series, notice: "Series was successfully created."
+      redirect_to(
+        admin_series_path(@series),
+        notice: "Series was successfully created."
+      )
     else
       render :new
     end
@@ -29,7 +32,10 @@ class Admin::SeriesController < Admin::BaseController
 
   def update
     if @series.update(series_params)
-      redirect_to @series, notice: "Series was successfully updated."
+      redirect_to(
+        admin_series_path(@series),
+        notice: "Series was successfully updated."
+      )
     else
       render :edit
     end
@@ -37,7 +43,10 @@ class Admin::SeriesController < Admin::BaseController
 
   def destroy
     @series.destroy
-    redirect_to series_index_url, notice: "Series was successfully destroyed."
+    redirect_to(
+      admin_series_index_path,
+      notice: "Series was successfully destroyed."
+    )
   end
 
   private

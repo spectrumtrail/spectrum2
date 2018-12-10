@@ -16,13 +16,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
       :avatar,
       :birthdate,
       :cell_phone,
-      :first_name,
+      :full_name,
       :hometown,
       :is_rogue_member,
-      :last_name,
       :life_long_athlete,
       :medical_notes,
       :preferred_division,
+      :preferred_name,
       :preferred_shirt_size,
       :time_zone
     ]

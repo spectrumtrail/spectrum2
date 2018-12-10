@@ -48,6 +48,12 @@ gem 'simple_form'
 # Use LocalTime to show times naturally
 gem 'local_time'
 
+# Use Draper to decorate Models before being presented to users
+gem "draper"
+
+# Use the SmartListing gem for rendering, sorting, and filtering collections
+# gem "smart_listing"
+
 group :development, :test do
   gem 'byebug', '~> 10.0', platforms: %i[mri mingw x64_mingw]
   gem 'factory_bot_rails', '~> 4.11'

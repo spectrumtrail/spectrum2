@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_06_145243) do
+ActiveRecord::Schema.define(version: 2018_12_10_151138) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,8 +38,8 @@ ActiveRecord::Schema.define(version: 2018_12_06_145243) do
 
   create_table "emergency_contacts", force: :cascade do |t|
     t.bigint "user_id"
-    t.string "first_name"
-    t.string "last_name"
+    t.string "full_name"
+    t.string "preferred_name"
     t.string "relation"
     t.string "cell_phone"
     t.datetime "last_notified"
@@ -76,8 +76,8 @@ ActiveRecord::Schema.define(version: 2018_12_06_145243) do
     t.string "invited_by_type"
     t.bigint "invited_by_id"
     t.integer "invitations_count", default: 0
-    t.string "first_name"
-    t.string "last_name"
+    t.string "full_name"
+    t.string "preferred_name"
     t.datetime "birthdate"
     t.string "hometown"
     t.boolean "life_long_athlete"

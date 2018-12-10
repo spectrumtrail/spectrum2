@@ -34,8 +34,8 @@ class Users::InvitationsController < Devise::InvitationsController
       :invite,
       keys: [
         :email,
-        :first_name,
-        :last_name,
+        :full_name,
+        :preferred_name,
         :mobile_phone
       ]
     )
@@ -45,8 +45,8 @@ class Users::InvitationsController < Devise::InvitationsController
     devise_parameter_sanitizer.permit(
       :accept_invitation,
       keys: [
-        :first_name,
-        :last_name,
+        :full_name,
+        :preferred_name,
         :email
         :password,
         :password_confirmation,

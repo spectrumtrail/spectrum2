@@ -10,14 +10,6 @@ class User < ApplicationRecord
 
   DIVISIONS = ["FEMALE", "MALE", "OPEN"].freeze
 
-  def name
-    if first_name.present?
-      "#{first_name} #{last_name}".titleize
-    else
-      "Not Set"
-    end
-  end
-
   def soft_delete!
     update(:deleted_at, Time.current)
   end

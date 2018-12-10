@@ -9,8 +9,8 @@
     %fieldset
       %legend Contact Info
       .form-group
-        = f.input :first_name, required: true, autofocus: true
-        = f.input :last_name, required: true
+        = f.input :full_name, required: true, autofocus: true, label: "Your Full Name"
+        = f.input :preferred_name, required: true, label: "Preferred Name"
         = f.input :cell_phone, label: "Phone", as: :tel, required: true
         = f.input :allows_texting, as: :radio_buttons, label: "Allow us to text you?"
         = f.input :email, required: true, autofocus: true

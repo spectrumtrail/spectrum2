@@ -1,12 +1,13 @@
 = content_for :js_libs, "modernizr jasny"
-= render layout: "layouts/app_nav" do
+= render layout: "layouts/users/app_nav" do
   = render "layouts/flashes"
-  .container
-    .row
-      .col-sm-12.col-md-4
-        = render "users/profile_header"
-      .col-sm-12.col-md-8
-        .card.mt-5
-          .card-body
-            .container
-              = yield
+  .row
+    .col-sm-12.col-md-3
+      = render "users/profile_header"
+    .col-sm-12.col-md-6
+      .card.mt-5
+        .card-body
+          .container
+            = yield
+    .col-sm-12.col-md-3
+      = render "layouts/users/menu"

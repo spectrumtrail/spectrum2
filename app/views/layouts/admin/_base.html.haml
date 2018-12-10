@@ -15,5 +15,5 @@
     = javascript_include_tag "application", 'data-turbolinks-track': 'reload'
     = yield :javascript
     = yield :head
-  %body{:class => @body_class, "data-js-libs" => "bootstrap fitie metis forms prism clipboard bs-switch #{yield :js_libs}"}
+  %body{:class => @body_class, "data-js-libs" => "bootstrap fitie metis forms sidenav prism clipboard bs-switch #{yield :js_libs}"}
     = yield

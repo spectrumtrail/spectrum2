@@ -1,4 +1,4 @@
-- @title = "Showing series"
+- @title = "Showing #{@series.name}"
 
 .container
   .row
@@ -40,5 +40,5 @@
             %span= @series.contact_name
 
         .form-actions.col-md-offset-2
-          = link_to fa_icon_tag("pencil") + ' Edit', edit_series_path(@series), class: 'btn btn-primary'
-          = link_to 'Back', series_index_path, class: 'btn'
+          = link_to fa_icon_tag("pencil") + ' Edit', edit_admin_series_path(@series), class: 'btn btn-primary'
+          = link_to 'Back', admin_series_index_path, class: 'btn'

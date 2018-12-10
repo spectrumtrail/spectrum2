@@ -16,7 +16,7 @@
         = f.input :email, required: true, autofocus: true
         = f.input :allows_email, as: :radio_buttons, label: "Allow us to email you?"
         .custom-file
-          = f.input :avatar, label: "Profile Image"
+          = f.input :avatar, label: "Profile Image", wrapper: :horizontal_custom_file
     %hr
     %fieldset.form-group
       %legend Preferences

@@ -1,10 +1,18 @@
-.card
-  .card-body
-    = user_avatar(current_user, height: "120", width: "120", class: "avatar img-rounded")
-    %h4.m0.p0.d-block= current_user.name
-    .badge.badge-dark.small= current_user.level
-  .card-footer.d-flex.justify-content-between
-    %div
-      %a.btn.btn-neutral{href: edit_user_registration_path} Edit Profile
-    %div
-      %a.btn.btn-neutral{href: destroy_user_session_path} Log Out
+#ProfileCard
+  .justify-content-center.flex-column.pb-0
+    .card.card-image.card-image-avatar
+      .d-flex.flex-column
+        .card-header.pb-0
+          = user_avatar(current_user, class: "shadow image-offset")
+          %h4.card-title.text-primary.mt-4.my-2= current_user.name
+          .badge.badge-dark= current_user.level
+          %p.small.text-muted
+            Joined
+            = current_user.joined_ago_time
+        .card-body.d-flex.justify-content-around.text-primary
+          %p Something here...
+        .card-footer.d-flex.justify-content-between
+          %div
+            %a.btn.btn-neutral{href: edit_user_registration_path} Edit Profile
+          %div
+            %a.btn.btn-neutral{href: destroy_user_session_path} Log Out

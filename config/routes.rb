@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     invitations: 'users/invitations',
     passwords: 'users/passwords'
   }
+
   devise_scope :user do
     match "/profile" => "users/registrations#edit", via: [:get]
     get "/users/sign_out" => "users/sessions#destroy"

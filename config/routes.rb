@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :registrations
+  resources :races
   root to: "static_pages#home"
   match "/home" => redirect("/"), via: [:get]
   match "/privacy" => "static_pages#privacy", via: [:get]

@@ -1,0 +1,39 @@
+- @title = "Showing race"
+
+.container
+  .row
+    .col-xs-12.col-sm-12.col-md-12.col-lg-12
+      .form-horizontal
+        .form-group
+          %label.col-sm-2.form-label Name
+          .uneditable-input.col-md-8.form-control
+            %span= @race.name
+
+        .form-group
+          %label.col-sm-2.form-label Series
+          .uneditable-input.col-md-8.form-control
+            %span= @race.series
+
+        .form-group
+          %label.col-sm-2.form-label Slug
+          .uneditable-input.col-md-8.form-control
+            %span= @race.slug
+
+        .form-group
+          %label.col-sm-2.form-label Short description
+          .uneditable-input.col-md-8.form-control
+            %span= @race.short_description
+
+        .form-group
+          %label.col-sm-2.form-label Long description
+          .uneditable-input.col-md-8.form-control
+            %span= @race.long_description
+
+        .form-group
+          %label.col-sm-2.form-label Facebook event link
+          .uneditable-input.col-md-8.form-control
+            %span= @race.facebook_event_link
+
+        .form-actions.col-md-offset-2
+          = link_to fa_icon_tag("pencil") + ' Edit', edit_race_path(@race), class: 'btn btn-primary'
+          = link_to 'Back', races_path, class: 'btn'

@@ -1,0 +1,34 @@
+- @title = "Listing registrations"
+
+- content_for :description do
+  %p Edit this template in app/views/Registrations/index.html.haml.
+
+- content_for :actions do
+  = link_to new_registration_path, class: 'btn btn-primary btn-large pull-right' do
+    = fa_icon_tag "plus"
+    Add Registration
+
+.container
+  .row
+    .col-xs-12.col-sm-12.col-md-12.col-lg-12
+      .sheet.sheet-condensed
+        .sheet-inner
+          %table.table
+            %thead
+              %tr
+                %th Race
+                %th First name
+                %th Last name
+                %th Terms accepted
+                %th
+            %tbody
+            - @registrations.each do |registration|
+              %tr
+              %td= registration.race
+              %td= registration.first_name
+              %td= registration.last_name
+              %td= registration.terms_accepted
+              %td.actions
+                = link_to fa_icon_tag("eye-open"), registration, rel: 'tooltip', title: 'Show'
+                = link_to fa_icon_tag("pencil"), edit_registration_path(registration), rel: 'tooltip', title: 'Edit'
+                = link_to fa_icon_tag("trash"), registration, rel: 'tooltip', title: 'Delete', data: { confirm: 'Are you sure?' }, method: :delete

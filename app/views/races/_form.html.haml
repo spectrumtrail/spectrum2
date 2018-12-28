@@ -1,0 +1,14 @@
+= simple_form_for(@race, wrapper: :horizontal_form, html: { class: 'form-horizontal' }) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name
+    = f.association :series
+    = f.input :slug
+    = f.input :short_description
+    = f.input :long_description
+    = f.input :facebook_event_link
+
+  .form-actions.col-md-offset-3.col-md-9
+    = f.button :submit
+    = f.button :cancel, to: races_path

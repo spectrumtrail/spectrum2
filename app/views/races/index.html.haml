@@ -1,0 +1,38 @@
+- @title = "Listing races"
+
+- content_for :description do
+  %p Edit this template in app/views/Races/index.html.haml.
+
+- content_for :actions do
+  = link_to new_race_path, class: 'btn btn-primary btn-large pull-right' do
+    = fa_icon_tag "plus"
+    Add Race
+
+.container
+  .row
+    .col-xs-12.col-sm-12.col-md-12.col-lg-12
+      .sheet.sheet-condensed
+        .sheet-inner
+          %table.table
+            %thead
+              %tr
+                %th Name
+                %th Series
+                %th Slug
+                %th Short description
+                %th Long description
+                %th Facebook event link
+                %th
+            %tbody
+            - @races.each do |race|
+              %tr
+              %td= race.name
+              %td= race.series
+              %td= race.slug
+              %td= race.short_description
+              %td= race.long_description
+              %td= race.facebook_event_link
+              %td.actions
+                = link_to fa_icon_tag("eye-open"), race, rel: 'tooltip', title: 'Show'
+                = link_to fa_icon_tag("pencil"), edit_race_path(race), rel: 'tooltip', title: 'Edit'
+                = link_to fa_icon_tag("trash"), race, rel: 'tooltip', title: 'Delete', data: { confirm: 'Are you sure?' }, method: :delete

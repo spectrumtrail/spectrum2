@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_10_151138) do
+ActiveRecord::Schema.define(version: 2018_12_18_151345) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,28 @@ ActiveRecord::Schema.define(version: 2018_12_10_151138) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_emergency_contacts_on_user_id"
+  end
+
+  create_table "races", force: :cascade do |t|
+    t.string "name"
+    t.bigint "series_id"
+    t.string "slug"
+    t.string "short_description"
+    t.text "long_description"
+    t.string "facebook_event_link"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["series_id"], name: "index_races_on_series_id"
+  end
+
+  create_table "registrations", force: :cascade do |t|
+    t.bigint "race_id"
+    t.string "first_name"
+    t.string "last_name"
+    t.boolean "terms_accepted"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["race_id"], name: "index_registrations_on_race_id"
   end
 
   create_table "series", force: :cascade do |t|
@@ -100,4 +122,6 @@ ActiveRecord::Schema.define(version: 2018_12_10_151138) do
   end
 
   add_foreign_key "emergency_contacts", "users"
+  add_foreign_key "races", "series"
+  add_foreign_key "registrations", "races"
 end

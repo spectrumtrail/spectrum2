@@ -1,0 +1,12 @@
+= simple_form_for(@registration, wrapper: :horizontal_form, html: { class: 'form-horizontal' }) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.association :race
+    = f.input :first_name
+    = f.input :last_name
+    = f.input :terms_accepted
+
+  .form-actions.col-md-offset-3.col-md-9
+    = f.button :submit
+    = f.button :cancel, to: registrations_path

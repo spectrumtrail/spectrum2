@@ -1,7 +1,6 @@
 = render layout: "layouts/admin/base" do
   = render partial: "layouts/admin/side_menu"
   .main-content
-    = render partial: "layouts/admin/top_nav"
     - if content_for?(:description) || content_for?(:actions)
       .scaffold.page-header
         .container-fluid
@@ -14,6 +13,6 @@
               - if content_for?(:actions)
                 = yield :actions
       / /.page-header
-    .container.pt-4
+    .container.pt-2
       = render "layouts/admin/flashes"
       = yield

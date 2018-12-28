@@ -13,10 +13,6 @@ class UsersController < ApplicationController
     end
   end
 
-  def restore
-
-  end
-
   private
 
   def find_user

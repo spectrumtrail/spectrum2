@@ -1,2 +1,0 @@
-class FooserController < ApplicationController
-end

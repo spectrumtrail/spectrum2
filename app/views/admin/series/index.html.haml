@@ -1,34 +1,32 @@
 - @title = "Series"
 
 - content_for :description do
-  %p Edit this template in app/views/Series/index.html.haml.
+  %p
+    Series are collections of races grouped around a central theme. They can be
+    configured to support mass registration and are often marketed cohesively.
+
 
 - content_for :actions do
-  = link_to new_admin_series_path, class: 'btn btn-primary btn-large pull-right' do
+  = link_to new_admin_series_path, class: 'btn btn-outline-primary btn-large pull-right' do
     = fa_icon_tag "plus"
-    Add Series
+    Add A Series
 
-.container
-  .row
-    .col-xs-12.col-sm-12.col-md-12.col-lg-12
-      .sheet
-        .sheet-inner
-          %table.table
-            %thead
-              %tr
-                %th Name
-                %th Opens
-                %th Contact
-                %th
-            %tbody
-              - @series.each do |series|
-                %tr{id: "series-#{series.id}"}
-                  %td= series.name
-                  %td
-                    = series.allows_mass_registration?
-                    = series.mass_registration_open_at
-                  %td= series.contact_name
-                  %td.actions
-                    = link_to fa_icon_tag("eye-open"), admin_series_path(series), rel: 'tooltip', title: 'Show'
-                    = link_to fa_icon_tag("pencil"), edit_admin_series_path(series), rel: 'tooltip', title: 'Edit'
-                    = link_to fa_icon_tag("trash"), admin_series_path(series), rel: 'tooltip', title: 'Delete', data: { confirm: 'Are you sure?' }, method: :delete
+.row
+  - @series.each do |series|
+    .col-4
+      .card.card-image
+        .card-header
+          %img.card-img-top{:alt => "It's Fill Murray everybody", :src => "http://fillmurray.com/300/210"}/
+          .floor-fade
+          %h4.card-title= series.name
+        .card-body
+          %p.card-text= series.short_description
+        .card-footer.d-flex.justify-content-between
+          = link_to fa_icon_tag("eye"), admin_series_path(series), rel: 'tooltip', title: 'Show'
+          = link_to fa_icon_tag("pencil"), edit_admin_series_path(series), rel: 'tooltip', title: 'Edit'
+          = link_to fa_icon_tag("trash"),
+            admin_series_path(series),
+            rel: 'tooltip',
+            title: 'Delete',
+            data: { confirm: 'Are you sure?' },
+            method: :delete

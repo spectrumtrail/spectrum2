@@ -3,6 +3,10 @@ module ApplicationHelper
     "Spectrum Trail Running"
   end
 
+  def current_user?
+    current_user.present?
+  end
+
   def user_avatar(user, options)
     if user.avatar.attached?
       image_tag(user.avatar.variant(resize: "200x200>"), options)

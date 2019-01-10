@@ -6,7 +6,9 @@ class User < ApplicationRecord
   devise :invitable, :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  has_many :registrations
   has_one_attached :avatar
+
 
   DIVISIONS = ["FEMALE", "MALE", "OPEN"].freeze
 

@@ -5,10 +5,8 @@
       = render "users/profile_card"
       = render "users/next_race"
 
-    .col-sm-12.col-md-6
+    .col-sm-12.col-md-9
+      = render "layouts/flashes"
       .card
         .card-body
           = yield
-    .col-sm-12.col-md-3
-      = render "layouts/flashes"
-      = render "layouts/users/right_menu"

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_18_151345) do
+ActiveRecord::Schema.define(version: 2019_01_09_220145) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -67,7 +67,9 @@ ActiveRecord::Schema.define(version: 2018_12_18_151345) do
     t.boolean "terms_accepted"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
     t.index ["race_id"], name: "index_registrations_on_race_id"
+    t.index ["user_id"], name: "index_registrations_on_user_id"
   end
 
   create_table "series", force: :cascade do |t|
@@ -124,4 +126,5 @@ ActiveRecord::Schema.define(version: 2018_12_18_151345) do
   add_foreign_key "emergency_contacts", "users"
   add_foreign_key "races", "series"
   add_foreign_key "registrations", "races"
+  add_foreign_key "registrations", "users"
 end

@@ -14,8 +14,8 @@
         %a.nav-link{href: "javascript:"} MORE
       %li.nav-item
         - if current_user?
-          %a.btn.btn-sm.btn-primary{href: new_user_session_path} SIGN IN
-        - else
           %a.btn.btn-sm.btn-primary{href: registrations_path} PROFILE
+        - else
+          %a.btn.btn-sm.btn-primary{href: new_user_session_path} SIGN IN
       %li.nav-item
         %a.btn.btn-sm.btn-success.text-white{href: new_user_registration_path} SIGN UP
